@@ -4,7 +4,7 @@
   http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
 	version="2.1">
 
-	<persistence-unit name="vikas">
+	<persistence-unit name="name">
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		<!-- <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode> -->       <!-- for caching -->  
 		<properties>
@@ -29,3 +29,35 @@
 		</properties>
 	</persistence-unit>
 </persistence>
+
+********************************************************************************************************************************************************************
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+                                 http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
+
+    <persistence-unit name="name">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <properties>
+            <!-- JDBC Configuration for PostgreSQL -->
+            <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/your_db_name" />
+            <property name="javax.persistence.jdbc.user" value="your_username" />
+            <property name="javax.persistence.jdbc.password" value="your_password" />
+
+            <!-- Hibernate Configuration -->
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+            <!-- Optional: 2nd level cache -->
+            <!--
+            <property name="hibernate.cache.use_second_level_cache" value="true"/>
+            <property name="hibernate.cache.region.factory_class" value="org.hibernate.cache.ehcache.EhCacheRegionFactory"/>
+            -->
+        </properties>
+    </persistence-unit>
+</persistence>
+
