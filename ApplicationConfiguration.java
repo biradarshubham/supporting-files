@@ -35,7 +35,9 @@ public class ApplicationConfiguration {
 				.contact(contact).description("This API exposes endpoints to manage AppName.")
 				.termsOfService("https://www.AppDomainName.com/terms").license(mitLicense);
 
-		return new OpenAPI().info(info).servers(List.of(devServer, prodServer));
+		return new OpenAPI().info(info)
+				    .servers(List.of(localhost, 
+				        new Server().url("https://api.userapp.in").description("Production environment")));
 	}
 }
 
@@ -77,8 +79,12 @@ public class ApplicationConfiguration {
 				.description("This API exposes endpoints to manage UserAPP.")
 				.termsOfService("https://userapp.in/terms").license(mitLicense);
 
-		return new OpenAPI().info(info).servers(List.of(localhost));
+		//return new OpenAPI().info(info).servers(List.of(localhost));
+		return new OpenAPI().info(info)
+				    .servers(List.of(localhost, 
+				        new Server().url("https://api.userapp.in").description("Production environment")));
 	}
 	
 }
+
 
