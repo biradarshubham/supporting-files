@@ -11,7 +11,7 @@
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.cj.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/****" />
+				value="jdbc:mysql://localhost:3306/**** ?createDatabaseIfNotExist=true" />
 			<property name="javax.persistence.jdbc.user"
 				value="*****" />
 			<property name="javax.persistence.jdbc.password"
@@ -43,7 +43,7 @@
         <properties>
             <!-- JDBC Configuration for PostgreSQL -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/your_db_name" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/your_db_name?options=-c%20search_path%3Dpublic" />
             <property name="javax.persistence.jdbc.user" value="your_username" />
             <property name="javax.persistence.jdbc.password" value="your_password" />
 
