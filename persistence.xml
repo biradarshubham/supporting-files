@@ -39,7 +39,7 @@
 
     <persistence-unit name="name">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-
+		<!-- <shared-cache-mode>ENABLE_SELECTIVE</shared-cache-mode> -->       <!-- for caching --> 
         <properties>
             <!-- JDBC Configuration for PostgreSQL -->
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
